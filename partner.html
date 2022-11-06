@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="author" content="{$page article-author}">
+	<meta name="keywords" content="{$page keywords}">
+	<meta name="description" content="{$page.description|escape}">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+    <meta name="HandheldFriendly" content="True">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Myaso</title>
+	<link rel="shortcut icon" href="/dist/img/logo.png" type="image/x-icon">
+
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="dist/libs/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="dist/libs/owl-carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="dist/libs/owl-carousel/assets/owl.theme.default.min.css">
+	<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+	<link rel="stylesheet" href="dist/css/styles.css">
+</head>
+<body>
+
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  
+	  <symbol id="ok" viewBox="0 0 40 40">
+	    	<path fill-rule="evenodd" d="M33.808,34.113 C30.224,37.718 25.273,39.949 19.804,39.949 C14.335,39.949 9.384,37.718 5.800,34.113 C2.216,30.507 -0.000,25.526 -0.000,20.024 C-0.000,14.522 2.216,9.541 5.800,5.936 C9.384,2.330 14.335,0.100 19.804,0.100 C25.273,0.100 30.224,2.330 33.808,5.936 C37.392,9.541 39.608,14.522 39.608,20.024 C39.608,25.526 37.392,30.507 33.808,34.113 ZM24.135,9.557 C23.006,8.421 21.445,7.718 19.721,7.718 C17.997,7.718 16.436,8.421 15.306,9.557 C14.176,10.694 13.477,12.264 13.477,13.999 C13.477,15.734 14.176,17.304 15.306,18.440 C16.436,19.577 17.997,20.280 19.721,20.280 C21.445,20.280 23.006,19.577 24.135,18.440 C25.265,17.304 25.964,15.734 25.964,13.999 C25.964,12.264 25.265,10.694 24.135,9.557 ZM26.743,21.294 C26.297,20.611 25.385,20.422 24.706,20.870 C19.171,24.543 14.915,20.927 14.903,20.916 C14.275,20.397 13.348,20.488 12.832,21.119 C12.315,21.750 12.406,22.684 13.033,23.203 C13.044,23.211 15.068,24.912 18.208,25.364 L13.782,29.514 C13.187,30.072 13.153,31.010 13.707,31.610 C14.262,32.209 15.194,32.243 15.790,31.685 L19.601,28.112 L23.412,31.685 C24.007,32.243 24.940,32.209 25.494,31.610 C26.049,31.010 26.015,30.072 25.419,29.514 L21.013,25.383 C22.639,25.183 24.428,24.599 26.322,23.343 C27.000,22.894 27.189,21.977 26.743,21.294 ZM19.721,17.546 C18.747,17.546 17.865,17.149 17.227,16.507 C16.589,15.866 16.195,14.978 16.195,13.999 C16.195,13.019 16.589,12.132 17.227,11.490 C17.865,10.848 18.747,10.452 19.721,10.452 C20.695,10.452 21.576,10.848 22.214,11.490 C22.852,12.132 23.247,13.019 23.247,13.999 C23.247,14.978 22.852,15.866 22.214,16.507 C21.576,17.149 20.695,17.546 19.721,17.546 Z"/>
+	  </symbol>
+	  
+	  <symbol id="fb" viewBox="0 0 40 40">
+	  		<path fill-rule="evenodd" d="M34.685,34.012 C31.101,37.617 26.150,39.847 20.681,39.847 C15.213,39.847 10.261,37.617 6.678,34.012 C3.094,30.406 0.877,25.425 0.877,19.923 C0.877,14.421 3.094,9.440 6.678,5.834 C10.261,2.229 15.213,-0.001 20.681,-0.001 C26.150,-0.001 31.101,2.229 34.685,5.834 C38.269,9.440 40.486,14.421 40.486,19.923 C40.486,25.425 38.269,30.406 34.685,34.012 ZM25.659,7.786 L20.868,7.786 C20.868,7.786 16.816,7.499 16.816,13.549 L16.816,15.907 L14.282,15.907 L14.282,19.923 L16.816,19.923 L16.816,32.162 L20.682,32.162 L20.682,19.923 L24.673,19.923 L25.370,15.907 L20.682,15.907 L20.682,14.026 C20.682,13.219 20.855,11.844 22.756,11.844 L25.659,11.844 L25.659,7.786 Z"/>
+	  </symbol>
+
+	  <symbol id="insta" viewBox="0 0 40 40">
+			<path fill-rule="evenodd"  d="M34.613,34.163 C31.029,37.769 26.078,39.999 20.609,39.999 C15.140,39.999 10.189,37.769 6.605,34.163 C3.022,30.558 0.805,25.577 0.805,20.075 C0.805,14.573 3.022,9.591 6.605,5.986 C10.189,2.381 15.140,0.151 20.609,0.151 C26.078,0.151 31.029,2.381 34.613,5.986 C38.197,9.591 40.414,14.573 40.414,20.075 C40.414,25.577 38.197,30.558 34.613,34.163 ZM30.836,12.801 C30.836,12.224 30.601,11.699 30.224,11.320 C29.847,10.940 29.325,10.705 28.752,10.705 L13.340,10.705 C12.766,10.705 12.245,10.940 11.868,11.320 C11.490,11.699 11.256,12.224 11.256,12.801 L11.256,28.306 C11.256,28.884 11.490,29.407 11.868,29.787 C12.245,30.167 12.766,30.403 13.340,30.403 L28.752,30.403 C29.325,30.403 29.847,30.167 30.224,29.787 C30.601,29.407 30.836,28.884 30.836,28.306 L30.836,12.801 ZM28.229,16.646 L26.261,16.646 C25.647,16.646 25.145,16.140 25.145,15.522 L25.145,13.520 C25.145,12.902 25.647,12.396 26.261,12.396 L28.229,12.396 C28.843,12.396 29.346,12.902 29.346,13.520 L29.346,15.522 C29.346,16.140 28.843,16.646 28.229,16.646 ZM26.351,18.997 L28.842,18.997 L28.842,27.822 C28.842,27.980 28.777,28.123 28.674,28.228 C28.570,28.333 28.427,28.397 28.270,28.397 L13.821,28.397 C13.665,28.397 13.522,28.332 13.418,28.228 C13.314,28.123 13.250,27.980 13.250,27.822 L13.250,18.997 L15.741,18.997 C15.464,19.673 15.311,20.414 15.311,21.192 C15.311,22.784 15.953,24.227 16.991,25.271 C18.029,26.315 19.462,26.961 21.046,26.961 C22.629,26.961 24.063,26.315 25.100,25.271 C26.138,24.227 26.780,22.784 26.780,21.192 C26.780,20.414 26.627,19.673 26.351,18.997 ZM21.046,24.991 C20.003,24.991 19.059,24.565 18.376,23.878 C17.692,23.190 17.270,22.241 17.270,21.192 C17.270,20.142 17.692,19.192 18.376,18.505 C19.059,17.818 20.003,17.393 21.046,17.393 C22.089,17.393 23.033,17.818 23.716,18.505 C24.399,19.192 24.822,20.142 24.822,21.192 C24.822,22.241 24.399,23.190 23.716,23.878 C23.033,24.565 22.089,24.991 21.046,24.991 Z"/>
+	  </symbol>
+
+	  <symbol id="wk" viewBox="0 0 40 40">
+	  	<path fill-rule="evenodd" d="M34.490,34.062 C30.907,37.668 25.955,39.898 20.486,39.898 C15.018,39.898 10.066,37.668 6.483,34.062 C2.899,30.457 0.682,25.475 0.682,19.974 C0.682,14.472 2.899,9.490 6.483,5.885 C10.066,2.279 15.018,0.049 20.486,0.049 C25.955,0.049 30.907,2.279 34.490,5.885 C38.074,9.491 40.291,14.472 40.291,19.974 C40.291,25.475 38.074,30.457 34.490,34.062 ZM32.427,26.712 C31.101,25.110 29.694,23.733 28.358,22.139 C27.661,21.309 27.902,21.219 28.287,20.626 C29.475,18.800 30.693,16.835 31.821,15.026 C32.327,14.213 32.161,13.893 31.364,13.893 C30.187,13.893 29.009,13.893 27.831,13.893 C26.897,13.893 26.794,13.745 26.163,14.950 C25.017,17.134 23.644,19.949 21.773,20.115 C21.784,18.121 21.796,16.270 21.807,14.275 C21.810,13.739 21.715,13.219 20.773,13.219 C19.547,13.219 18.322,13.219 17.097,13.219 C16.030,13.219 15.449,13.745 15.482,14.068 C15.546,14.695 16.691,13.914 16.691,15.656 C16.691,17.142 16.691,18.629 16.691,20.115 C15.306,20.329 13.494,16.985 12.191,14.714 C11.830,14.085 11.852,13.893 10.667,13.893 C9.606,13.893 8.546,13.893 7.485,13.893 C6.916,13.893 6.536,14.075 6.951,14.898 C9.056,19.079 13.819,27.605 18.037,27.605 C19.026,27.605 20.016,27.605 21.005,27.605 C21.729,27.605 21.930,27.259 21.930,26.780 C21.930,25.936 21.930,25.164 21.930,24.254 C23.523,24.415 24.577,25.616 25.710,26.823 C26.436,27.596 26.666,27.613 27.268,27.613 C28.771,27.613 30.275,27.610 31.779,27.609 C32.624,27.608 32.726,27.074 32.427,26.712 Z"/>
+	  </symbol>
+
+	  <symbol id="email" viewBox="0 0 40 40">
+	  	<path fill-rule="evenodd" d="M34.418,34.113 C30.834,37.718 25.883,39.949 20.414,39.949 C14.945,39.949 9.994,37.718 6.411,34.113 C2.827,30.507 0.610,25.526 0.610,20.024 C0.610,14.522 2.827,9.541 6.411,5.936 C9.994,2.330 14.945,0.100 20.414,0.100 C25.883,0.100 30.834,2.330 34.418,5.936 C38.002,9.541 40.219,14.522 40.219,20.024 C40.219,25.526 38.002,30.507 34.418,34.113 ZM28.919,12.049 C26.875,10.109 24.058,8.909 20.952,8.909 C17.847,8.909 15.030,10.109 12.986,12.049 C10.923,14.007 9.646,16.716 9.646,19.710 C9.646,22.702 10.923,25.411 12.986,27.370 C15.030,29.310 17.847,30.510 20.952,30.510 C21.636,30.510 22.312,30.450 22.973,30.336 C23.645,30.220 24.297,30.046 24.923,29.823 C25.549,29.600 25.878,28.909 25.657,28.278 C25.436,27.648 24.749,27.317 24.122,27.539 C23.625,27.718 23.105,27.856 22.568,27.948 C22.051,28.038 21.511,28.084 20.952,28.084 C18.480,28.084 16.246,27.138 14.634,25.607 C13.042,24.096 12.057,22.011 12.057,19.710 C12.057,17.408 13.042,15.322 14.634,13.811 C16.246,12.280 18.480,11.335 20.952,11.335 C23.425,11.335 25.659,12.281 27.271,13.811 C28.863,15.322 29.848,17.408 29.848,19.710 C29.848,20.451 29.748,21.165 29.561,21.839 C29.366,22.539 29.075,23.206 28.702,23.827 C28.702,23.827 28.702,23.828 28.702,23.828 C28.391,24.338 27.957,24.693 27.538,24.845 C27.377,24.904 27.234,24.928 27.127,24.910 C27.101,24.906 27.082,24.898 27.073,24.887 C27.007,24.806 26.968,24.636 26.968,24.353 L26.968,15.324 C26.968,14.654 26.428,14.111 25.762,14.111 C25.303,14.111 24.917,14.379 24.714,14.759 C23.587,13.766 22.139,13.144 20.538,13.144 C18.761,13.144 17.151,13.882 15.986,15.076 C14.825,16.265 14.107,17.904 14.107,19.710 C14.107,21.515 14.825,23.153 15.986,24.343 C17.151,25.536 18.761,26.275 20.538,26.275 C22.080,26.275 23.477,25.695 24.587,24.767 C24.653,25.451 24.870,26.006 25.208,26.422 C25.609,26.915 26.142,27.200 26.741,27.298 C27.259,27.382 27.815,27.317 28.357,27.119 C29.253,26.793 30.152,26.082 30.756,25.086 C30.759,25.082 30.762,25.081 30.764,25.077 C31.245,24.277 31.622,23.410 31.877,22.493 C32.126,21.598 32.259,20.665 32.259,19.710 C32.259,16.716 30.982,14.007 28.919,12.049 ZM23.375,22.647 C22.650,23.390 21.646,23.850 20.538,23.850 C19.428,23.850 18.425,23.390 17.700,22.647 C16.970,21.899 16.518,20.860 16.518,19.710 C16.518,18.559 16.970,17.520 17.700,16.772 C18.425,16.029 19.428,15.569 20.538,15.569 C21.646,15.569 22.650,16.029 23.375,16.772 C24.105,17.520 24.557,18.559 24.557,19.710 C24.557,20.860 24.105,21.899 23.375,22.647 Z"/>
+	  </symbol>
+
+	  <symbol id="youTube" viewBox="0 0 40 40">
+		<path fill-rule="evenodd" d="M34.195,34.062 C30.611,37.668 25.660,39.898 20.191,39.898 C14.722,39.898 9.771,37.668 6.187,34.062 C2.604,30.457 0.387,25.475 0.387,19.974 C0.387,14.472 2.604,9.490 6.187,5.885 C9.771,2.279 14.722,0.049 20.191,0.049 C25.660,0.049 30.611,2.279 34.195,5.885 C37.779,9.491 39.995,14.472 39.995,19.974 C39.995,25.475 37.779,30.457 34.195,34.062 ZM29.417,11.534 L10.965,11.534 C7.424,11.534 7.424,28.413 10.965,28.413 L29.417,28.413 C32.958,28.413 32.958,11.534 29.417,11.534 ZM17.018,19.974 L17.018,15.139 L25.447,19.974 L17.018,24.808 L17.018,19.974 Z"/>
+	  </symbol>
+	</svg>
+
+	
+	<div class="ottisk-wrap">
+		<div class="dark-fn"></div>
+		<header  class="ottisk-header">
+			<div class="header-center py-3">
+				<div class="container">
+					<div class="d-flex flex-wrap justify-content-between align-items-center">
+						<div class="logo-wrap">
+							<a href="index.html" class="d-flex align-items-center logo">
+								<div class="pr-5 logo-img"><img src="dist/img/logo.png" alt="logo"></div>
+							</a>
+						</div>
+
+						<ul class="header-navbar navbar list-unstyled">
+							<li><a href="index.html#about">О компании</a></li>
+							<li><a href="products.html">КАТАЛОГ</a></li>
+							<li><a href="index.html#sertificate"  class="scroll-link">ХАЛЯЛЬ</a></li>
+							<li><a href="partner.html">ПАРТНЕРАМ</a></li>
+							<li><a href="#contact" class="scroll-link">КОНТАКТЫ</a></li>
+						</ul>
+
+						<div class="d-flex">
+							<a href="products.html" class="btn-primary new-btn">
+								<img src="dist/img/new.svg" alt="img new">
+								<span>Скачать каталог</span>
+							</a>
+
+							<!-- lang -->
+						      <div class="lang">
+						        <div class="active-lang">
+						        	<span class="arrow-lang"><svg class="t-cover__arrow-svg" viewBox="0 0 38.417 18.592"><g><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></g></svg>
+						        	</span>
+						        	<span class="lang-select">UZ</span>
+						        </div>
+						        <ul class="lang-list">
+						          <li data-curent="active"><a href=""><span><img src="dist/img//uz.svg" alt=""></span>EN</a></li>
+						          <li><a href=""><span><img src="dist/img//ru.png" alt=""></span>UZ</a></li>
+						          <li><a href=""><span><img src="dist/img//en.webp" alt=""></span>RU</a></li>
+						        </ul>
+						      </div>
+
+							<button class="mobile-nav-btn">
+								<img src="dist/img/menu.svg" alt="menu">
+							</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- mobile menu  -->
+			<div class="header-mobile-nav">
+				<div class="menu-close">x</div>
+				<ul class="header-navbar navbar list-unstyled">
+					<li><a href="index.html#about">О компании</a></li>
+					<li><a href="products.html">КАТАЛОГ</a></li>
+					<li><a href="index.html#sertificate"  class="scroll-link">ХАЛЯЛЬ</a></li>
+					<li><a href="partner.html">ПАРТНЕРАМ</a></li>
+					<li><a href="#contact" class="scroll-link">КОНТАКТЫ</a></li>
+				</ul>
+			</div>
+			
+		</header>
+
+
+
+		<div class="section-product bg-white" id="product">
+			<div class="content-breadcrump">
+				<ul class="content-breadcrump__bl">
+					<li class=""><a href="index.html">Главная</a></li>
+					<li class="active">ПАРТНЕРАМ</li>
+				</ul>
+			</div>
+			<div class="container">
+				<h3 class="section-title text-dark">Ищем партнеров по сбыту колбасной продукции</h3>
+				<form class="row site-form" action="#">
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="text" placeholder="имя">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="text" placeholder="Телефон">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="email" placeholder="email">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="submit" value="Стать партнером по сбыту">
+					</div>
+				</form>
+					<div class="mt-4 alert-danger p-3 d-none">Пожалуйста, заполните все обязательные поля</div>		
+			</div>
+		</div>
+
+		<section class="sertificate-section bg-white pt-5 pb-5 " id="sertificate">
+			<div class="sertificate-slider owl-carousel">
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser1.webp" data-fancybox="sertificate">
+							<img src="dist/img/pr1.jpg" alt="ser1">
+						</a>
+					</div>
+				</div>
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser2.webp" data-fancybox="sertificate">
+							<img src="dist/img/pr3.webp" alt="ser1">
+						</a>
+					</div>
+				</div>
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser3.webp" data-fancybox="sertificate">
+							<img src="dist/img/pr5.webp" alt="ser1">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<div class="section p-3">
+			<div class="container text-center">
+				<h5>Мы предлагаем конкурентоспособные цены и используем индивидуальный подход при выборе условий работы:</h5>
+
+
+				<div class="row pt-5 pb-5">
+					<div class="col-12 col-md-3">
+						<div class="part-item">
+							<div class="part-item__title">Доставка</div>
+							<div class="part-item__txt">Транспортной компанией в регионы</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-3">
+						<div class="part-item">
+							<div class="part-item__title">Предоплата</div>
+							<div class="part-item__txt">Или отсрочка платежа</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-3">
+						<div class="part-item">
+							<div class="part-item__title">Скидки</div>
+							<div class="part-item__txt">В зависимости от объема</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-3">
+						<div class="part-item">
+							<div class="part-item__title">Подход</div>
+							<div class="part-item__txt">Индивидуальные условия работы</div>
+						</div>
+					</div>
+				</div>
+
+				<p><b>Чтобы получить презентацию, ознакомиться со стандартным договором или получить список необходимых для сотрудничества документов — заполните форму ниже. Также мы можем организовать встречу, в том числе и с выездом в ваш регион.</b></p>
+
+				<form class="row site-form pt-5 pb-5" action="#">
+					<div class="col-12 col-lg-3 col-md-6  mb-3">
+						<input type="text" placeholder="имя">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="text" placeholder="Телефон">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="email" placeholder="email">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 mb-3">
+						<input type="submit" value="Стать партнером по сбыту">
+					</div>
+				</form>
+					<div class="mt-4 alert-danger p-3 d-none">Пожалуйста, заполните все обязательные поля</div>		
+			</div>
+		</div>
+
+		<section class="sertificate-section" id="sertificate">
+			<div class="container">
+				<h3 class="section-title">Сертификаты ХАЛЯЛЬ</h3>
+			</div>
+			<div class="sertificate-slider owl-carousel">
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser1.webp" data-fancybox="sertificate">
+							<img src="dist/img/ser1.webp" alt="ser1">
+						</a>
+					</div>
+				</div>
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser2.webp" data-fancybox="sertificate">
+							<img src="dist/img/ser2.webp" alt="ser1">
+						</a>
+					</div>
+				</div>
+				<div class="sertificate-slider-item">
+					<div class="container">
+						<a href="dist/img/ser3.webp" data-fancybox="sertificate">
+							<img src="dist/img/ser3.webp" alt="ser1">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		
+		<footer class="site-footer" id="contact">
+
+			<div class="container">
+				<h3 class="section-title">КОНТАКТЫ</h3>
+				<div class="section-subtitle text-center">Свяжитесь с нами по почте и телефону, <br> или заполните форму для связи ниже.</div>
+				<div class="row pt-4">
+					<div class="col-md-6 col-12">
+
+						<div class="footer-item">
+							<div class="footer-item__title">ООО «ДИН»</div>
+							<div class="footer-item__info"></div>				
+						</div>
+						<div class="footer-item">
+							<div class="footer-item__title">Адрес:</div>
+							<div class="footer-item__info">117292, г. Москва, ул. Гримау, д.10, этаж 2, помещение 5</div>				
+						</div>
+						<div class="footer-item">
+							<div class="footer-item__title">Телефоны:</div>
+							<div class="footer-item__info">+7 (495) 781-85-67, +7 (495) 781-63-42</div>				
+						</div>
+						<div class="footer-item">
+							<div class="footer-item__title">Факс:</div>
+							<div class="footer-item__info"> +7 (496) 442-24-19</div>				
+						</div>
+
+						<div class="footer-item">
+							<div class="footer-item__title">Отдел продаж:</div>
+							<div class="footer-item__info">+7 (499) 430-02-76</div>				
+						</div>
+
+						<div class="footer-item">
+							<div class="footer-item__title">Email::</div>
+							<div class="footer-item__info">info@safa.su</div>				
+						</div>
+
+						<div class="social-wrapper">
+							<ul class="social-links">
+								<li><a href="#"><svg class="icon"><use xlink:href="#ok" /></svg></a></li>
+								<li><a href="#"><svg class="icon"><use xlink:href="#fb" /></svg></a></li>
+								<li><a href="#"><svg class="icon"><use xlink:href="#insta" /></svg></a></li>
+								<li><a href="#"><svg class="icon"><use xlink:href="#wk" /></svg></a></li>
+								<li><a href="#"><svg class="icon"><use xlink:href="#email" /></svg></a></li>
+								<li><a href="#"><svg class="icon"><use xlink:href="#youTube" /></svg></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-12">
+						<form action="#" class="form">
+							<div class="form-item">
+								<input type="text" placeholder="Как вас зовут ?">
+							</div>
+							<div class="form-item">
+								<input type="text" placeholder="Ваш номер телевона">
+							</div>
+							<div class="form-item">
+								<input type="text" placeholder="Как вас зовут ?">
+							</div>
+							<div class="form-item">
+								<input type="email" placeholder="Ваш Email">
+							</div>
+							<div class="form-item">
+								<textarea name="textarea" placeholder="Ваш комментарий"></textarea>
+							</div>
+							<div class="form-item">
+								<div class="form-check d-flex">
+								  <input class="form-check-input" type="checkbox" name="flexCkeckboxDefault" id="flexCkeckboxDefault1">
+								  <label class="form-check-label" for="flexCkeckboxDefault1">
+								  	 <span class="form-checkbox-span">Я согласен с политикой конфиденциальности</span>
+								  </label>
+								</div>
+							</div>
+							<div class="form-submit">
+								<input type="submit" value="Отправить">
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			
+		</footer>
+
+
+	</div>
+
+	<!-- Modal  modalCalback-->
+	<div class="modal fade" id="modalCalback" tabindex="10" role="dialog" aria-labelledby="modalCalbackLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	  	 	<button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+	      	<div class="cal-mod">
+	      		<div class="cal-mod__title">Оставить отзыв</div>
+	      		<form action="#" method="post">
+	      			<div class="form-group">
+	      				<input type="text" placeholder="Имя">
+	      			</div>
+	      			<div class="form-group">
+	      				<textarea name="textarea" placeholder="Ваш комментарий"></textarea>
+	      			</div>
+	      			<div class="form-group">
+	      				<div class="form-check d-flex">
+						  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						  <label class="form-check-label" for="flexRadioDefault1">
+						  	 <span class="form-radio-span">Согласен на обработку моих персональных данных</span>
+						  </label>
+						</div>
+	      			</div>
+	      			<div class="form-group form-submit">
+	      				<input type="submit" name="submitBnt" value="Отправить ">
+	      			</div>
+	      		</form>
+
+	      	</div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="modalSuccess" tabindex="10" role="dialog" aria-labelledby="modalSuccessLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	  	 	<button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+	      	<div class="cal-mod">
+	      		<div class="cal-mod__title">Ваш запрос отправлен</div>
+	      	</div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<script
+	  src="https://code.jquery.com/jquery-3.6.0.min.js"
+	  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="dist/libs/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+	<script type="text/javascript" src="dist/libs/owl-carousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="dist/js/main.js"></script>
+</body>
+</html>

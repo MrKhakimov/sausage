@@ -1,0 +1,1071 @@
+@import './_vars.sass'
+@import './_global.sass'
+@import './_modal.sass'
+@import './_lang.scss'
+
+:root
+    --bs-blue: #0d6efd
+    --bs-indigo: #6610f2
+    --bs-purple: #6f42c1
+    --bs-pink: #d63384
+    --bs-red: #dc3545
+    --bs-orange: #fd7e14
+    --bs-yellow: #ffc107
+    --bs-green: #198754
+    --bs-teal: #20c997
+    --bs-cyan: #0dcaf0
+    --bs-white: #fff
+    --bs-gray: #6c757d
+    --bs-gray-dark: #343a40
+    --bs-primary: #096909
+    --bs-secondary: #6c757d
+    --bs-success: #198754
+    --bs-info: #0dcaf0
+    --bs-warning: #ffc107
+    --bs-danger: #dc3545
+    --bs-light: #f8f9fa
+    --bs-dark: #212529
+    --bs-primary--hover: #ba4662
+
+body
+    margin: 0
+    padding: 0
+    background: $white-color !important
+
+
+.bottom-decoration
+    position: relative
+    &:after
+        content: ''
+        position: absolute
+        top: 100%
+        left: 50%
+        right: 50%
+        opacity: 0
+        height: 1px
+        background-color: var(--bs-white)
+        transition: all 0.25s ease-in-out
+    &:hover:after
+        left: 0
+        right: 0
+        opacity: 1
+
+.content-breadcrump
+    margin-bottom: 40px
+    margin-top: 20px
+    background: #fff
+    padding: 30px 0
+    @media(max-width: $tablet)
+        margin-bottom: 40px
+.content-breadcrump__bl
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    li
+        line-height: 1.3
+        font-weight: 600
+        font-size: 18px
+        font-family: $latoFont
+        vertical-align: middle
+        color: #030d28
+        @media(max-width: 560px)
+            font-size: 14px
+        &:after
+            content: ' - '
+            display: inline-block
+            margin: 0 5px
+        &:last-child:after
+            display: none
+        &:hover
+            a
+                opacity: 0.7
+        a
+            display: inline-block
+            vertical-align: middle
+            line-height: 1.3
+            font-weight: 600
+            font-size: 18px
+            font-family: $latoFont
+            color: $primary-color
+            @media(max-width: 560px)
+                font-size: 14px
+
+.bg-primary
+    background: $primary-color !important
+.btn-primary
+    display: inline-block
+    font-size: 16px
+    font-weight: 700
+    background: var(--bs-primary)
+    padding: 15px 35px
+    border-radius: 30px
+    text-transform: uppercase
+    transition: all 0.25s ease-in-out
+    &:hover, &:focus, &:active 
+        background: #fff
+        color: var(--bs-primary)
+    &:focus
+        border-color: #fff !important
+        box-shadow: 0 0 0 0.25rem rgba(186, 70, 98, 0.5)
+    @media(max-width: 1025px) 
+        padding: 15px 20px 
+a
+    text-decoration: none
+
+.pagination
+    li
+        margin: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        a
+            font-size: 25px
+            font-weight: 700
+            font-family: $latoFont
+            color: $secondary-color
+            text-decoration: underline
+            @media(max-width: $phones)
+                font-size: 16px
+            &[rel]
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 66px
+                height: 66px
+                padding: 10px
+                border-radius: 50%
+                background: $secondary-color
+                @media(max-width: $tablet)
+                    width: 40px
+                    height: 40px
+                @media(max-width: $phones)
+                    width: 30px
+                    height: 30px
+                &:hover
+                    background: $primary-color
+                & img
+                    max-width: 16px
+                    @media(max-width: $phones)
+                        max-width: 7px
+
+        &.active
+            a
+                text-decoration: none
+                color: $siteColor
+
+.owl-dots
+    display: flex
+    justify-content: center
+    margin-top: 40px
+    .owl-dot
+        width: 15px
+        height: 15px
+        margin: 0 5px
+        border: 1px solid $primary-color !important
+        border-radius: 50%
+
+        background: transparent !important
+        transition: all 0.25s ease-in-out
+        &.active
+            background: $primary-color !important
+            border-radius: 10px 
+            border-color: $primary-color !important
+            transition: all 0.25s ease-in-out
+
+
+.owl-nav
+    & .owl-prev, .owl-next
+        position: absolute
+        top: 30%
+        width: 40px
+        height: 40px
+        right: 100%
+        border-radius: 50%
+        background: #fff !important
+        font-size: 34px !important
+        margin: 0 15px
+        border: 1px solid $primary-color !important
+        span
+            font-size: 45px !important
+            line-height: 30px
+            color:  $primary-color
+        @media(max-width: 992px)
+            top: 50%
+            margin-top: -25px
+        &:hover
+            background: $primary-color !important
+            span
+                color: #fff
+    & .owl-next
+        left: 100% !important
+        right: auto !important
+    @media(max-width: $phones)
+        display: none !important
+
+
+.ourteam .owl-dots
+    margin-top: 20px
+
+.ottisk-header
+    background: $primary-color
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 100
+.header-top
+    @media(max-width: $phones)
+        display: none
+    a, span
+        font-weight: 500
+        color: var(--bs-white)
+        @media(max-width: $phones)
+            font-size: 14px
+
+.header-info
+    padding-bottom: 16px
+    @media(max-width: 991px)
+        text-align: center !important
+    &__icon
+        max-width: 40px
+        margin-right: 8px
+
+.logo
+    color: #000
+    max-width: 150px
+    &-img
+        margin-right: 8px
+        transition: $transition
+    &:hover
+        color: #000
+        .logo-text__2
+            color: $primary-color
+        .logo-img
+            transform: rotateZ(-10deg)      
+    @media(max-width: $phones)
+        max-width: 100px
+.dark-fn
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background: rgba(0, 0, 0, 0.5)
+    display: none
+    &.opened
+        display: block
+// menu close
+.menu-close
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width: 40px
+    height: 40px
+    background: $primary-color 
+    position: fixed
+    z-index: 101
+    left: 0px
+    top: 35px
+    visibility: hidden
+    opacity: 0
+    cursor: pointer
+    transform: translate3d(100%, 0, 0)
+    transition: 0.30s
+    &.opened
+        left: 230px
+        opacity: 1
+        visibility: visible
+        transform: translate3d(0, 0, 0)
+.header-mobile-nav
+    // +border-radius(20px)
+    padding: 50px 0 0 0
+    background-color: #fff
+    position: fixed
+    height: 100vh
+    right: 0px
+    top: 0px
+    width: 250px
+    overflow: auto
+    // visibility: hidden
+    z-index: 100
+    transform: translate3d(100%, 0, 0)
+    transition: 0.3s
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &.opened
+        transform: translate3d(0, 0, 0)
+        visibility: visible 
+    & .header-navbar
+        padding-left: 15px
+        display: block !important
+        li
+            margin-bottom: 15px 
+    & .header-infos
+        background: $primary-color
+        padding: 20px
+        @media(max-width: $phones)
+            & .header-info
+                text-align: left !important
+        a, span
+            font-size: 14px
+            color: #fff
+            // filter: invert(1)
+.header-navbar
+    @media(max-width: $tablet)
+        display: none !important
+    li
+        margin: 0 10px
+        a
+            position: relative
+            font-size: 14px
+            color: #FFF
+            text-transform: uppercase
+            font-weight: 700
+            transition: all 0.25s ease-in-out
+            &:after
+                content: ''
+                position: absolute
+                top: 100%
+                left: 50%
+                right: 50%
+                opacity: 0
+                height: 1px
+                background-color: #fff
+                transition: all 0.25s ease-in-out  
+            @media(max-width: 1025px)
+                font-size: 13px
+                
+            @media(max-width: $tablet)
+                color: #333
+                &:hover, &.active
+                    a
+                        color: #222
+                        &:after
+                            left: 0
+                            right: 0
+                            opacity: 1 
+        &:hover, &.active
+            a
+                color: #fff
+                &:after
+                    left: 0
+                    right: 0
+                    opacity: 1
+        
+
+.new-btn
+    @media(max-width: $phones)
+        padding: 7px
+    img
+        display: none
+        @media(max-width: $phones)
+            display: block
+            width: 35px
+    span
+        display: none       
+        @media(min-width: $phones)
+            display: block      
+
+.mobile-nav-btn
+    display: none
+    min-width: 50px
+    height: 50px
+    margin-left: 8px
+    background: none
+    border-radius: 50%
+    padding: 8px
+    transition: $transition
+
+    &:hover
+        background: $primary-color
+        img
+            filter: invert(1)
+    @media(max-width: $tablet)
+        display: block
+
+.top-slider
+    display: flex !important
+    min-width: 100%
+
+.top-slider-item
+    min-height: 100vh
+    background: #000
+    display: flex
+    width: 100%
+    justify-content: center
+    align-items: center
+    padding: 50px 0
+    text-align: center
+    position: relative
+    background-size: cover
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 0
+        background: rgba(0, 0, 0, 0.5)
+    & .container
+        position: relative
+        z-index: 1  
+    &__title
+        color: #ffffff
+        font-size: 45px
+        font-weight: 700
+        margin-bottom: 1em
+        @media(max-width: $tablet)
+            font-size: 2.5em
+        @media(max-width: $phones)
+            font-size: 1.5em
+    &__text
+        color: #ffffff
+        font-size: 24px
+        font-weight: 400
+        margin-bottom: 0.5em
+        @media(max-width: $tablet)
+            font-size: 1.5em
+            margin-bottom: 20px
+        @media(max-width: $phones)
+            font-size: 1em
+
+
+.scroll-to-bottom
+    display: block
+    width: 40px
+    height: 28px
+    position: absolute
+    bottom: 20px
+    left: 50%
+    margin-left: -20px
+    z-index: 2
+    svg
+        height: 100%
+        width: 100%
+        fill: #fff
+    &:hover
+        svg 
+            fill: #ccc
+
+.section-title
+    text-align: center
+    text-transform: uppercase
+    position: relative
+    font-weight: 700
+    color: #fff
+    padding-bottom: 20px
+    &.text-black
+        color: #222
+    @media(max-width: $phones)
+        font-size: 1.5em
+
+.section-subtitle
+    font-size: 22px
+    color: #fff
+    margin-bottom: 24px
+
+.section-product
+    background: #a82534
+    padding: 60px 0 60px
+    @media(max-width: $phones)
+        padding: 60px 0 30px
+
+.product-item
+    height: 280px
+    display: block
+    background: #333
+    position: relative
+    transition: $transition
+    margin-bottom: 24px
+    overflow: hidden
+    @media(max-width: $phones)
+        height: 250px
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 1
+        background: rgba(0, 0, 0, 0.5)
+    img
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        object-fit: cover
+        transition: $transition
+    &__title
+        font-size: 24px
+        color: #fff
+        font-weight: 700
+        line-height: 1.35
+        position: absolute
+        top: 40%
+        left: 0
+        right: 0
+        text-align: center
+        text-transform: uppercase
+        z-index: 2
+        transition: $transition
+    &__btn
+        color: #fff
+        font-size: 14px
+        background: #a82534
+        padding: 10px 16px
+        border-radius: 30px
+        position: absolute
+        top: 40%
+        left: 0
+        right: 0
+        max-width: 50%
+        margin: 0 auto
+        opacity: 0
+        text-align: center
+        z-index: 3
+        transition: $transition
+    &:hover
+        img
+            transform: scale(1.2)
+        .product-item__title
+            top: 30%
+        .product-item__btn
+            top: 50%
+            opacity: 1
+
+
+.btn-play
+    position: absolute
+    top: 40%
+    left: 50%
+    display: block
+    width: 63px
+    height: 63px
+    background-image: url(../img/play.png)
+    background-repeat: no-repeat
+    background-size: 20px 28px
+    border-radius: 50%
+    background-position: left 24px center
+    &:hover
+        background-color: $secondary-color
+    &:before
+        content: ''
+        position: absolute
+        bottom: 0px
+        left: 0px
+        top: 0px
+        right: 0px
+        border-radius: 50%
+        z-index: -1
+        background: $primary-color
+        // animation: 1s rippleAnim ease-in infinite
+    &:after
+        content: ''
+        position: absolute
+        bottom: -10px
+        left: -10px
+        top: -10px
+        right: -10px
+        border-radius: 50%
+        z-index: -2
+        background: rgba(255,255, 255, 0.5)
+        animation: 2s rippleAnim ease-in infinite
+
+.about-section, 
+.sertificate-section
+    padding: 100px 0 60px
+    position: relative
+    @media(max-width: $phones)
+        padding: 80px 0 40px
+.about-slider
+    position: relative
+.about-img
+    max-width: 500px
+    height: 100%
+    @media(max-width: $tablet)
+        height: 350px
+    @media(max-width: $phones)
+        height: 250px
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+.about-text
+    font-size: 20px
+    line-height: 1.5
+    @media(max-width: $phones)
+        font-size: 18px
+    p
+        font-size: 20px
+        line-height: 1.5
+        @media(max-width: $phones)
+            font-size: 18px
+.about-text2
+    font-size: 20px
+    line-height: 1.3
+    font-weight: 700
+    @media(max-width: $phones)
+        font-size: 18px
+
+.sertificate-section
+    background: $primary-color
+
+.sertificate-slider
+    position: relative
+    & .owl-nav
+        & .owl-prev
+            right: 80% !important
+        & .owl-next
+            left: 80% !important
+    & .owl-dots
+        & .owl-dot
+            background: $red-color !important
+            &.active, &:hover
+                background: #fff !important
+
+.sertificate-slider-item
+    a
+        display: block
+        max-width: 500px
+        margin: 0 auto
+        height: 400px
+        text-align: center
+        @media(max-width: $tablet)
+            height: 300px
+        img
+            height: 100%
+            width: auto !important
+            max-width: 100%
+            width: auto
+            margin: 0 auto
+            object-fit: contain
+    @media(max-width: $tablet)
+        max-width: 100%
+
+
+
+
+.site-footer
+    background: $red-color
+    padding: 80px 0 30px
+
+.footer-item
+    color: #fff
+    font-size: 20px
+    margin-bottom: 32px
+    a
+        color: #fff
+        display: inline-block
+    &__title
+        font-weight: 700
+        line-height: 1.7
+        display: inline-block
+
+    &__info
+        font-weight: 400
+        line-height: 1.7
+        display: inline-block
+
+
+.form
+    .form-item
+        margin-bottom: 24px
+        input, textarea
+            padding: 20px
+            width: 100%
+            &:placeholder
+                color: #ccc
+        textarea
+            min-height: 100px
+
+.form-submit
+    input
+        padding: 20px 40px
+        background: $primary-color
+        color: #fff
+        font-size: 18px
+        font-weight: 700
+        text-transform: uppercase
+        &:hover
+            color: $primary-color
+            background: #fff
+
+.social-wrapper
+    display: flex
+    align-items: center
+    @media(max-width: $tablet)
+        margin-bottom: 40px
+        flex-wrap: wrap
+        justify-content: center
+        text-align: center
+.social-text
+    margin-right: 15px
+    color: #ffffff
+    font-size: 14px
+    @media(max-width: $tablet)
+        margin-bottom: 20px
+        margin-right: 0
+.social-links
+    display: flex
+    li
+        max-width: 30px
+        flex: 0 0 30px
+        height: 30px
+        margin: 0 2px
+        svg
+            width: 100%
+            height: 100%
+            fill: #ffffff
+            transition: $transition
+        &:hover
+            svg
+                fill: #ff90aa   
+
+.site-designer
+    &:hover
+        span
+            color: #ff90aa
+
+
+.page-content
+    min-height: 500px
+    padding: 50px 0 150px
+    position: relative
+    @media(max-width: $tablet)
+        padding-bottom: 80px
+    & .container
+        position: relative
+        z-index: 2
+    &:after
+        content: ''
+        position: absolute
+        display: block
+        right: 0
+        top: 40%
+        width:  187px
+        height: 257px
+        background: url(../img/books-el.png) center right no-repeat
+        background-size: contain
+        z-index: -1 
+        @media(max-width: 1500px)
+            width: 100px
+        @media(max-width: 1200px)
+            width: 80px
+        @media(max-width: $tablet)
+            display: none
+    p, span
+        font-size: 20px
+        color: #1d1d1d
+        font-weight: 500
+        @media(max-width: $tablet)
+            font-size: 16px
+
+    h3
+        @media(max-width: $phones)
+            font-size: 1.5em
+        @media(max-width: 450px)
+            font-size: 1.2em
+
+.galery-images
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -16px
+    justify-content: space-beetwen
+.galery-img
+    display: block
+    max-width: 100%
+    border-radius: 10px
+    overflow: hidden
+    position: relative
+    height: 210px
+    margin-bottom: 20px
+    @media(max-width: $phones)
+        height: 180px
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        transition: $transition
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 1
+        background: $primary-color
+        opacity: 0
+        transition: $transition
+    &:before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        display: block
+        width: 60px
+        height: 60px
+        margin-left: -30px
+        margin-top: -30px
+        z-index: 3
+        background: url(../img/zoom.png) center center no-repeat
+        background-size: contain
+        opacity: 0
+        transition: $transition 
+    &:hover
+        img
+            transform: scale(1.2)   
+        &:after
+            opacity: 0.7
+        &:before
+            opacity: 1
+            transition: $transition
+
+
+.services-item
+    background: #f9f3f5
+    margin-bottom: 64px
+    border-radius: 12px
+    padding: 60px 35px 35px
+    @media(max-width: $tablet)
+        padding: 40px 20px 10px
+        margin-bottom: 40px
+    @media(max-width: $phones)
+        margin-bottom: 24px
+    &__left
+        display: flex
+        align-items: center
+        @media(max-width: $tablet)
+            flex-wrap: wrap
+        @media(max-width: $tablet)
+            justify-content: center
+            margin-bottom: 20px
+    &__img
+        margin-right: 32px
+        max-width: 225px
+        flex: 1 0 225px
+        @media(max-width: 1500px)
+            max-width: 195px
+            flex: 1 0 195px
+
+        @media(max-width: $tablet)
+            margin-right: 0
+            margin-bottom: 20px
+            text-align: center
+    &__name
+        font-size: 32px
+        font-weight: 700
+        color: #1e1e1e
+        font-family: $latoFont
+        @media(max-width: $tablet)
+            font-size: 24px
+
+
+.services-list__item
+    padding-bottom: 24px
+    margin-bottom: 28px
+    border-bottom: 2px solid #1e1e1e
+    cursor: pointer
+    &-top
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &-count
+        font-family: $latoFont
+        font-size: 20px
+        color: #1e1e1e
+        margin-right: 10px
+        font-weight: 700
+        @media(max-width: $tablet)
+            font-size: 14px
+        @media(max-width: $phones)
+            font-size: 12px
+    &-pair
+        font-family: $latoFont
+        font-size: 20px
+        color: $primary-color
+        margin-right: 10px
+        font-weight: 700
+        @media(max-width: $tablet)
+            font-size: 14px
+
+    &-btn
+        font-family: $latoFont
+        font-size: 20px
+        color: #1e1e1e
+        font-weight: 700
+        padding-left: 50px
+        position: relative
+        transition: $transition
+        @media(max-width: $tablet)
+            max-width: 100px
+            font-size: 12px
+            padding-left: 25px
+
+
+        &:before
+            content: ''
+            position: absolute
+            width: 37px
+            height: 37px
+            left: 0
+            top: 50%
+            margin-top: -18px
+            background: url(../img/arrow-dr.png) center no-repeat
+            background-size: contain
+            transition: $transition
+            @media(max-width: $tablet)
+                width: 20px
+                height: 20px
+                margin-top: -10px
+
+    &.active
+        & .services-list__item-btn
+            color: $primary-color
+            &:before
+                background-image: url(../img/arrow-dr-red.png)
+                transform: rotate(360deg)
+
+.services-list__item-bottom
+    display: none
+    padding-top: 45px
+    @media(max-width: $tablet)
+        padding-top: 20px
+    .site-form, .form-check
+        justify-content: flex-end
+
+.filter-list
+    background: $primary-color
+    border-radius: 50px
+    padding: 10px 16px
+    margin-bottom: 40px
+    @media(max-width: $phones)
+        border-radius: 10px
+
+.filter-list-form
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media(max-width: $tablet)
+        flex-wrap: wrap
+    @media(max-width: $phones)
+        justify-content: center
+    &__name
+        font-size: 16px
+        text-transform: uppercase
+        color: #ffffff
+        font-weight: 700
+        @media(max-width: $phones)
+            margin-bottom: 16px
+
+.filter-input, .submit-btn
+    width: 100%
+    max-width: 260px
+    @media(max-width: 1200px)
+        max-width: 200px
+    @media(max-width: $tablet)
+        margin-bottom: 16px
+        max-width: 250px
+    @media(max-width: $phones)
+        max-width: 100%
+    input, select, input[type="submit"]
+        padding: 16px 30px
+        font-size: 16px
+        font-weight: 700
+    select
+        background-image: url(../img/arrow-down.png)
+        background-position: right 15px center
+        background-repeat: no-repeat
+        appearance: none
+.submit-btn
+    max-width: 178px
+    @media(max-width: $tablet)
+        max-width: 150px
+    input[type="submit"]
+        background: none
+        border: 2px solid #fff
+        color: #fff
+        &:hover
+            border-color: $primary-color
+            color: $primary-color
+            background: #ffffff
+
+.product-info
+    display: block  
+    margin-bottom: 25px
+    color: #222
+    background: #fff
+    &:hover
+        color: #222
+    &__img
+        display: block
+        height: 200px
+        overflow: hidden
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+            transition: $transition 
+    &__main
+            display: block
+            padding: 24px
+    &__title
+        font-size: 22px
+        font-weight: 700
+        display: block 
+        margin-bottom: 16px
+        text-align: center
+        color: $primary-color
+    &__info
+        line-height: 1.7
+        span
+            padding: 0 10px
+    &__btn
+        display: block
+        color: #fff
+        font-size: 16px
+        background: #a82534
+        padding: 10px 16px
+        max-width: 70%
+        border-radius: 30px
+        margin: 24px auto 0
+        text-align: center
+        z-index: 3
+        transition: $transition
+    &:hover
+        img
+            transform: scale(1.2)
+        .product-info__btn
+            background: $primary-color
+
+.part-item
+    text-align: left
+    margin-bottom: 30px
+    &__title
+        font-size: 20px
+        font-weight: 700
+        padding-bottom: 20px
+        margin-bottom: 20px
+        border-bottom: 2px solid #222
+    &__txt
+        font-size: 18px
+
+p
+    font-size: 18px
+
+@keyframes rippleAnim
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.3)
+    100%
+        transform: scale(1)

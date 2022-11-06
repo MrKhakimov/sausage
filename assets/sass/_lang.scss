@@ -1,0 +1,97 @@
+.lang{
+	position: relative;
+	transition: all 0.05s ease-in-out;
+	margin-left: 16px;
+}
+
+@media(max-width: 767px) {
+	.lang{
+		margin: 0 10px;
+	}
+}
+
+.lang-list{
+	position: absolute;
+	top: 150%;
+	display: block;
+	min-width: 120px;
+	background: #fff;
+	padding: 10px; 
+	opacity: 0;
+	left: -50%;
+	border-radius: 8px;
+	transition: all 0.15s ease-in-out;
+	border: 1px solid #c5c7c8;
+	z-index: -1;
+	visibility: hidden;
+	/*box-shadow: 1px 0.5px 15px 1px #f5f6f9*/
+}
+
+.arrow-lang {
+	max-width: 15px;
+	flex-basis: 15px;
+	filter: invert(1);
+	margin-right: 8px;
+}
+.arrow-lang svg{
+	max-width: 100%;
+	width: 15px;
+	height: 8px;
+	
+}
+
+.active-lang{
+	padding: 10px;
+	/*height: 50px; */
+	border: 1px solid #c5c7c8;
+	transition: all 0.05s ease-in-out;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.lang-select{
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+}
+.active-lang i{
+	margin-right: 10px;
+}
+.lang:hover .lang-list, .lang:focus .lang-list{
+	opacity: 1;
+	top: 100%;
+	z-index: 10;
+	visibility: visible;
+}
+.lang:hover .active-lang{
+	// border-color: #a82534;
+	color: #a82534;
+}
+.lang-list li{
+	display: block;
+	font-size: 0;
+}
+.lang-list li a{
+	display: block;
+	padding: 15px;
+	font-size: 14px;
+	color: #222;
+}
+.lang-list li a:hover{
+	color: #a82534;
+}
+.lang-list li a span{
+	display: inline-block;
+	width: 25px;
+	height: 16px;
+	font-size: 0;
+	border: 1px solid #c5c7c8;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.lang-list li a span img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

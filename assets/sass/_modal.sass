@@ -1,0 +1,369 @@
+.modal-back
+    position: absolute
+    background: none
+    top: 15px
+    left: 15px
+    color: $red-color
+
+.btn-modal
+    position: absolute
+    top: 98.5%
+    left: 0
+    right: 0
+    min-width: 324px
+    max-width: 324px
+    background: transparent
+    padding: 26px 20px 20px
+    margin: -5px auto 0
+    z-index: 5
+    font-family: $siteFontFamily !important
+    font-size: 26px
+    font-weight: 700
+    color: #fff
+    text-align: center
+    letter-spacing: 0.75px
+    border-radius: 0 0 25px 25px
+    background: $primary-color
+    -webkit-clip-path: polygon(50% 9%, 100% 0, 100% 100%, 0 100%, 0 0)
+    clip-path: polygon(50% 9%, 100% 0, 100% 100%, 0 100%, 0 0)
+    transition: all 0.25s ease-in-out
+    &:hover
+        padding-top: 29px
+        color: #000
+        background: $primary-color
+    @media(max-width: 1700px)
+        top: 99.5%
+    @media(max-width: 1100px)
+        top: 99%
+    @media(max-width: 557px)
+        top: 98.7%
+    @media(max-width: 479px)
+        top: 99%
+        font-size: 18px
+        border-radius: 0 0 30px 30px
+        min-width: 90%
+        max-width: 90%
+    @media(max-width: 420px)
+        // top: 101%
+
+.modal
+    text-align: center
+.modal:after
+    content: ''
+    height: 100%
+    width: 1px
+    background: red
+    display: inline-block
+    vertical-align: middle
+    visibility: hidden
+
+
+.modal-dialog
+    display: inline-block
+    vertical-align: middle
+    max-width: 324px
+
+    @media(max-width: 360px)
+        max-width: 300px
+.modal-content
+    // border: 2px solid #c7c7ce
+    background: #fff
+    border-radius: 30px
+    padding: 30px
+    
+.cal-mod
+    text-align: center
+    &__title
+        font-size: 28px
+        font-weight: 600 
+        margin-bottom: 20px
+        color: $primary-color
+        div
+            margin-top: 10px
+            font-size: 13px
+            font-weight: 600
+            color: #000
+    form
+        & .form-group
+            margin-bottom: 20px
+            &.form-submit
+                margin-bottom: 0
+                @media(max-width: $tablet)
+                    margin: 0 auto
+                    text-align: center
+        input, textarea, select
+            border: 1px solid #dcdcdc
+            border-radius: 20px
+            padding: 10px 20px
+            width: 100%
+            font-size: 16px
+
+            background: linear-gradient(to bottom, #f6f6f6, #ffffff)
+            &:focus
+                outline: none
+                border-color: $secondary-color
+        input[type='file']
+            border: none
+            background: none
+
+        input[type='submit']
+            color: #fff
+            border-color: transparent
+            background: $primary-color
+            &:hover
+                background-color: $primary-color
+        textarea
+            min-height: 100px
+        .radio-button-input
+            display: flex
+            align-items: center
+            margin-bottom: 20px
+            input
+
+            span
+                display: block
+                flex: 1 0 80%
+                position: relative
+                font-size: 12px
+                font-weight: 600
+                color: #443324
+                text-align: left
+        & .form-radio-span
+            display: block
+            font-size: 12px
+            font-weight: 600
+            color: #443324
+            text-align: left
+
+        .file-inp
+            position: relative
+            margin-bottom: 10px
+            label
+                color: #000
+                font-size: 20px
+                &:hover
+                    color: $primary-color
+                input
+                    position: absolute
+                    top: 0
+                    left: 0
+                    font-size: 0
+                    visibility: hidden
+            span
+                color: $primary-color
+                text-decoration: underline
+
+.form-check
+    display: flex
+    align-items: center
+.form-check-input
+    flex: 0 0 20px
+    max-width: 20px
+    height: 20px
+    margin-right: 20px
+    padding: 0 !important
+    &:checked
+        background-color: #fff
+        border-color: $primary-color
+    &:focus
+        box-shadow: none !important
+
+.form-check-input:checked[type=radio]
+    background-image: url(../img/radio-bg.svg)
+
+.form-check-input
+    border-radius: 0 !important
+
+.form-check-input:checked[type=checkbox]
+    background-image: url(../img/checked.svg)
+    background-size: 12px 12px
+.form-check-label
+    color: #fff
+
+
+.modal-close
+    background: none
+    width: 23px
+    height: 23px
+    border: 1px solid #000
+    border-radius: 50%
+    position: absolute
+    top: 10px
+    right: 10px 
+
+form.site-form
+    & .form-group
+        margin-bottom: 20px
+        &.form-submit
+            margin-bottom: 0
+    input, textarea, select
+        border: 1px solid $red-color
+        padding: 15px 20px
+        width: 100%
+        font-size: 16px
+
+
+        background: linear-gradient(to bottom, #f6f6f6, #ffffff)
+        &:focus
+            outline: none
+            border-color: $secondary-color
+    input[type='file']
+        border: none
+        background: none
+
+    input[type='submit']
+        color: #fff
+        border-color: transparent
+        background: $red-color
+        &:hover
+            opacity: 0.7
+    textarea
+        min-height: 100px
+    .radio-button-input
+        display: flex
+        align-items: center
+        margin-bottom: 20px
+        input
+
+        span
+            display: block
+            flex: 1 0 80%
+            position: relative
+            font-size: 12px
+            font-weight: 600
+            color: #443324
+            text-align: left
+    & .form-radio-span
+        display: block
+        font-size: 12px
+        font-weight: 600
+        color: #443324
+        text-align: left
+
+    .file-inp
+        position: relative
+        margin-bottom: 10px
+        label
+            color: #000
+            font-size: 20px
+            &:hover
+                color: $primary-color
+            input
+                position: absolute
+                top: 0
+                left: 0
+                font-size: 0
+                visibility: hidden
+        span
+            color: $primary-color
+            text-decoration: underline
+
+
+#modalInfo
+    &.modal
+        height: 100vh
+        overflow: hidden !important
+        overflow-y: hidden !important
+
+    & .modal-dialog
+        max-width: 100%
+        margin: 0
+        border-radius: 0
+        overflow: hidden
+        max-height: 100vh
+
+    & .modal-content
+        height: 100vh
+        overflow-y: auto 
+        border-radius: 0
+
+
+.book-slider
+    margin-bottom: 16px
+
+
+.book-slider__item
+    position: relative
+    border-radius: 10px
+    overflow: hidden
+    height: 350px
+    background: #ccc
+
+    @media(max-width: $phones)
+        max-width: 100%
+        height: 280px
+    img
+        max-width: 100%
+        height: auto
+        object-fit: cover
+
+    &-price
+        position: absolute
+        bottom: 20px
+        background: $primary-color
+        color: #fff
+        border-radius: 25px 0 0 25px
+        padding: 10px 20px
+        right: 0
+        text-align: center
+        font-size: 18px 
+.book-thumbs
+    display: flex
+    flex-wrap: wrap
+    &__item
+        width:  102px
+        height: 102px
+        overflow: hidden
+        margin: 0 10px
+        background: red
+        border-radius: 10px
+        @media(max-width: $tablet)
+            width: 60px
+            height: 60px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.book-main
+    background: #ffffff
+    padding: 35px
+    border-radius: 10px
+    max-width: 300px    
+    &__text
+        color: #001a4b
+        font-size: 24px
+        @media(max-width: $phones)
+            font-size: 18px
+    &__serias
+        color: #a1a1a1
+        font-weight: 500
+        font-size: 24px
+        @media(max-width: $phones)
+            font-size: 20px
+    &__opision
+        margin: 40px 0
+        font-size: 24px
+        @media(max-width: $phones)
+            font-size: 20px
+    p
+        font-size: 18px
+        color: $siteColor
+        font-weight: 700
+        line-height: 1.5
+        @media(max-width: $phones)
+            font-size: 16px
+    &__btn
+        text-align: center
+        a
+            padding: 12px 30px
+            display: inline-block
+            background: $primary-color
+            border-radius: 10px
+            color: #fff
+            font-size: 18px
+            min-width: 335px
+            &:hover
+                background: $secondary-color
+
+    
